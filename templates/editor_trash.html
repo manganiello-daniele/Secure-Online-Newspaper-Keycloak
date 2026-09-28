@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Cestino articoli</h2>
+
+<ul>
+{% for a in articoli %}
+  <li>
+    {{ a.titolo }}
+    <form action="/editor/ripristina/{{a.id}}" method="POST" style="display:inline;">
+      <button type="submit">Ripristina</button>
+    </form>
+  </li>
+{% else %}
+  <li>Nessun articolo nel cestino.</li>
+{% endfor %}
+</ul>
+
+<p><a href="/editor">⬅ Torna all'area editor</a></p>
+{% endblock %}

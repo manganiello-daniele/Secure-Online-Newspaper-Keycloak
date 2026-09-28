@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Articoli in attesa di approvazione</h2>
+
+<ul>
+{% for a in articoli %}
+  <li>
+    {{ a.titolo }} – autore: {{ a.autore.username }}
+    <form action="/admin/articolo/{{a.id}}/approve" method="POST" style="display:inline;">
+      <button type="submit">Approva</button>
+    </form>
+  </li>
+{% else %}
+  <li>Nessun articolo in attesa.</li>
+{% endfor %}
+</ul>
+{% endblock %}

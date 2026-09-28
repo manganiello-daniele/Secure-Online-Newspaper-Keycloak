@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Gestione utenti</h2>
+
+<table border="1" cellpadding="5">
+  <tr>
+    <th>ID</th>
+    <th>Username</th>
+    <th>Ruolo</th>
+    <th>Azioni</th>
+  </tr>
+  {% for u in users %}
+  <tr>
+    <td>{{ u.id }}</td>
+    <td>{{ u.username }}</td>
+    <td>
+      <form action="/admin/user/{{u.id}}/role" method="POST">
+        <select name="role" onchange="this.form.submit()">
+          <option value="user" {% if u.role == 'user' %}selected{% endif %}>user</option>
+          <option value="editor" {% if u.role == 'editor' %}selected{% endif %}>editor</option>
+          <option value="admin" {% if u.role == 'admin' %}selected{% endif %}>admin</option>
+        </select>
+      </form>
+    </td>
+    <td>
+      {% if u.id != current_user.id %}
+      <form action="/admin/user/{{u.id}}/delete" method="POST" onsubmit="return confirm('Sei sicuro?');">
+        <button type="submit">Elimina</button>
+      </form>
+      {% else %}
+      (tu)
+      {% endif %}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

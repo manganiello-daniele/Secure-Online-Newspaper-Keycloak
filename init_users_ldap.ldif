@@ -1,0 +1,39 @@
+dn: ou=people,dc=giornale,dc=online
+objectClass: organizationalUnit
+ou: people
+
+dn: uid=admin,ou=people,dc=giornale,dc=online
+objectClass: inetOrgPerson
+cn: admin
+sn: admin
+uid: admin
+userPassword: CHANGE_ME_ADMIN
+employeeType: admin
+businessCategory: premium
+
+dn: uid=editor1,ou=people,dc=giornale,dc=online
+objectClass: inetOrgPerson
+cn: editor1
+sn: editor1
+uid: editor1
+userPassword: CHANGE_ME_EDITOR
+employeeType: editor
+businessCategory: premium
+
+dn: uid=user_standard,ou=people,dc=giornale,dc=online
+objectClass: inetOrgPerson
+cn: user_standard
+sn: user_standard
+uid: user_standard
+userPassword: CHANGE_ME_STANDARD
+employeeType: user
+businessCategory: standard
+
+dn: uid=user_premium,ou=people,dc=giornale,dc=online
+objectClass: inetOrgPerson
+cn: user_premium
+sn: user_premium
+uid: user_premium
+userPassword: CHANGE_ME_PREMIUM
+employeeType: user
+businessCategory: premium

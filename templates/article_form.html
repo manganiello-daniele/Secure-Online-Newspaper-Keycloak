@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if action == 'nuovo' %}
+  <h2>Nuovo articolo</h2>
+{% else %}
+  <h2>Modifica articolo</h2>
+{% endif %}
+
+<form method="POST" enctype="multipart/form-data">
+  <label>Titolo:<br>
+    <input type="text" name="titolo" value="{{ articolo.titolo if articolo else '' }}" required>
+  </label><br><br>
+
+  <label>Contenuto:<br>
+    <textarea name="contenuto" rows="8" cols="60" required>{{ articolo.contenuto if articolo else '' }}</textarea>
+  </label><br><br>
+
+  <label>Immagine (opzionale):<br>
+    <input type="file" name="image">
+  </label><br><br>
+
+  <button type="submit">Salva</button>
+</form>
+{% endblock %}

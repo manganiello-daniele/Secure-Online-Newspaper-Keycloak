@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<article class="mb-4">
+  <h2>{{ articolo.titolo }}</h2>
+  {% if articolo.autore %}
+    <p class="text-muted small">Di {{ articolo.autore.username }}</p>
+  {% endif %}
+  <hr>
+
+  {% if view_mode == 'full' %}
+    <p class="article-content">{{ articolo.contenuto }}</p>
+  {% else %}
+    <p class="article-content">
+      {{ articolo.snippet(400) }}
+    </p>
+    <div class="alert alert-info mt-3">
+      Questo articolo è riservato agli utenti <strong>premium</strong>.
+      Stai visualizzando solo un'anteprima.
+    </div>
+  {% endif %}
+</article>
+
+<a href="{{ url_for('home') }}" class="btn btn-outline-secondary">Torna alla home</a>
+{% endblock %}

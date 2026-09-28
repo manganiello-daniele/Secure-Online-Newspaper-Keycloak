@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Request
+  CombinedDecision="false"
+  ReturnPolicyIdList="false"
+  xmlns="urn:oasis:names:tc:xacml:3.0:core:schema:wd-17">
+  <Attributes Category="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject">
+    <Attribute AttributeId="urn:example:subject:role" IncludeInResult="false">
+      <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">editor</AttributeValue>
+    </Attribute>
+    <Attribute AttributeId="urn:example:subject:subscription" IncludeInResult="false">
+      <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">premium</AttributeValue>
+    </Attribute>
+  </Attributes>
+  <Attributes Category="urn:oasis:names:tc:xacml:3.0:attribute-category:action">
+    <Attribute AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id" IncludeInResult="false">
+      <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">create</AttributeValue>
+    </Attribute>
+  </Attributes>
+  <Attributes Category="urn:oasis:names:tc:xacml:3.0:attribute-category:resource">
+    <Attribute AttributeId="urn:example:resource:type" IncludeInResult="false">
+      <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">article</AttributeValue>
+    </Attribute>
+  </Attributes>
+</Request>

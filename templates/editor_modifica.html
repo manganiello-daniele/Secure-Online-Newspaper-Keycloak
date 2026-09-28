@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Modifica articolo</h2>
+<form method="POST" class="mt-3">
+  <div class="mb-3">
+    <label class="form-label">Titolo</label>
+    <input type="text" name="titolo" class="form-control"
+           value="{{ articolo.titolo }}" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Contenuto</label>
+    <textarea name="contenuto" rows="8" class="form-control" required>{{ articolo.contenuto }}</textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Salva modifiche</button>
+  <a href="{{ url_for('editor.editor_dashboard') }}" class="btn btn-link">Annulla</a>
+</form>
+{% endblock %}
